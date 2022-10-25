@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<table>
+    <tr valign="top">
+        <td> <img src="{{photos.url(user.image_file)}}" style="width:125px;height:125px"> </td>
+        {% if session['account_type'] == 'Company' %}
+            <td> <h1> User: {{user.name}}</h1></td>
+        {% else %}
+            <td> <h1> User: {{user.username}}</h1></td>
+        {% endif %}
+    </tr>
+    {% if session['account_type'] == 'Company' and user.website %}
+    <tr>
+        <td></td>
+        <td> <h3> <a href="{{user.website}}">{{user.name}} Website</a></h3></td>
+    </tr>
+    {% endif %}
+    <tr>
+        <td>
+            {% if user.username == current_user.username %}
+            <p><a href="{{url_for('edit_profile')}}"> Edit Profile</a></p>
+            {% endif %}
+        </td>
+        <td>
+            <h3>
+                Your Tags: {% for t in user.tags %} {{ t.name }} /{% endfor %}
+            </h3>
+        </td>
+    </tr>
+</table>
+<hr />
+

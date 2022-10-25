@@ -1,0 +1,121 @@
+2020-07-17 12:10:36,760 ERROR: Exception on /edit_profile [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1283, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '' for key 'user.ix_user_email'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 133, in edit_profile
+    current_user.tags = []
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\werkzeug\local.py", line 365, in <lambda>
+    __setattr__ = lambda x, n, v: setattr(x._get_current_object(), n, v)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 272, in __set__
+    self.impl.set(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1321, in set
+    old = self.get(state, dict_, passive=PASSIVE_ONLY_PERSISTENT)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 723, in get
+    value = self.callable_(state, passive)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 749, in _load_for_state
+    return self._emit_lazyload(
+  File "<string>", line 1, in <lambda>
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\strategies.py", line 890, in _emit_lazyload
+    q(session)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\ext\baked.py", line 545, in all
+    return list(self)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\ext\baked.py", line 440, in __iter__
+    self.session._autoflush()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1628, in _autoflush
+    util.raise_(e, with_traceback=sys.exc_info()[2])
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1617, in _autoflush
+    self.flush()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2523, in flush
+    self._flush(objects)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2664, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2624, in _flush
+    flush_context.execute()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 230, in save_obj
+    _emit_update_statements(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 994, in _emit_update_statements
+    c = cached_connections[connection].execute(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1020, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1133, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1323, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1517, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1283, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(pymysql.err.IntegrityError) (1062, "Duplicate entry '' for key 'user.ix_user_email'")
+[SQL: UPDATE user SET email=%(email)s WHERE user.id = %(user_id)s]
+[parameters: {'email': '', 'user_id': 3}]
+(Background on this error at: http://sqlalche.me/e/gkpj)

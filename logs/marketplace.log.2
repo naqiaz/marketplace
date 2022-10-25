@@ -1,0 +1,112 @@
+2020-07-17 09:42:40,578 ERROR: Exception on /password_reset/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MywiZXhwIjoxNTk0OTkzOTQ4LjgxMDEwNDgsInR5cGUiOiIifQ.hXSPoEWYQwsYXDbYd7OxOJ8QKS-mTB3fSeZRTfpuWgs [GET] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 217, in password_reset
+    return render_template('password_reset.html',title='Password Reset',form=form)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\password_reset.html", line 3, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\base.html", line 34, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\password_reset.html", line 18, in block "content"
+    {% for error in form.email.errors %}
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.ResetPasswordForm object' has no attribute 'email'
+2020-07-17 09:43:52,361 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:44:28,981 ERROR: Exception on /password_reset/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MywiZXhwIjoxNTk0OTk0MDUxLjM5MzIyLCJ0eXBlIjoiIn0.3qTWRGKjuNys6PP0Rx0-ugcN2EjO8iJoxvowPhuJcB0 [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 214, in password_reset
+    user = set_password(form.password.data)
+NameError: name 'set_password' is not defined
+2020-07-17 09:45:48,786 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:46:32,500 ERROR: Exception on /password_reset/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MywiZXhwIjoxNTk0OTk0MTc5LjU4ODUyNTgsInR5cGUiOiIifQ.v3FtIXon9_2JJvZsqvMC-ih177BSPa9eQ3yjjAZVcTw [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 214, in password_reset
+    user.set_password(form.password.data)
+AttributeError: 'BaseQuery' object has no attribute 'set_password'
+2020-07-17 09:50:51,771 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:50:56,130 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:51:51,952 ERROR: Exception on /password_reset/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MywiZXhwIjoxNTk0OTk0NDg4LjE1MTg4NywidHlwZSI6IiJ9.TjVK5Gm14Lz94oZ6KBhxV4ec6Z6oPANNsl1T1gwZqO8 [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 214, in password_reset
+    user.set_password(form.password.data)
+AttributeError: 'NoneType' object has no attribute 'set_password'
+2020-07-17 09:55:43,570 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:59:44,052 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 10:02:03,435 ERROR: Exception on /password_reset/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNTk0OTk1MDk4LjUyMjUsInR5cGUiOiJVc2VyIn0.EmlBNJSlevOEH9prinQYfOMUtT_iKyYm7OSFUeWbLwA [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 214, in password_reset
+    user.set_password(form.password.data)
+AttributeError: 'NoneType' object has no attribute 'set_password'
+2020-07-17 10:06:49,116 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 10:11:33,045 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 10:16:55,268 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]

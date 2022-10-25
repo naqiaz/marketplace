@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block content %}
+<h1> Log In </h1>
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    <p>
+        {{form.type.label}}<br />
+        {{form.type()}}<br />
+        {% for error in form.type.errors %}
+        <span style="color:red;"> [{{error}}] </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.username.label}}<br />
+        {{form.username(size=64)}}<br />
+        {% for error in form.type.errors %}
+        <span style="color:red;"> [{{error}}] </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.password.label}}<br />
+        {{form.password(size=64)}}<br />
+        {% for error in form.type.errors %}
+        <span style="color:red;"> [{{error}}] </span>
+        {% endfor %}
+    </p>
+    <p>{{form.submit()}}</p>
+    <p> {{form.remember_me.label}} {{form.remember_me()}}</p>
+</form> 
+<p> New User? <a href="{{url_for('register')}}" > Register Here </a> </p>
+<p> New Company? <a href="{{url_for('company_register')}}"> Register Here  </a> </p>
+<p> Forgot Password? <a href="{{url_for('reset_password')}}"> Reset Password </a></p>
+{% endblock %}

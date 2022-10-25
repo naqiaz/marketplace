@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title> {{title}} - Marketplace </title>
+</head>
+<body>
+    <div>
+        Marketplace:
+        <a href="{{url_for('index')}}"> Home </a>
+        {% if current_user.is_anonymous %}
+        <a href="{{url_for('login')}}"> Login </a>
+        {% else %}
+        {% if session['account_type'] == 'User' %}
+        <a href="{{url_for('promotions')}}"> Your Promotions </a>
+        <a href="{{url_for('profile',username=current_user.username)}}"> Your Profile </a>
+        <a href="{{url_for('adv_profile')}}"> Manage Your Account </a>
+        {% else %}
+        <a href="{{url_for('account',name=current_user.name)}}"> Your Profile </a>
+        <a href="{{url_for('adv_comp_profile')}}"> Manage Your Account </a>
+        {% endif %}
+
+        <a href="{{url_for('logout')}}">Logout</a>
+        {% endif %}
+    </div>
+    <hr />
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> {{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html>

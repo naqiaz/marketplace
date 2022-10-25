@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<h1> Edit Profile</h1>
+<form action="" method="post" novalidate>
+    {{form.hidden_tag()}}
+    <p>
+        <image src="{{photos.url(current_user.image_file)}}" style="height:250px;width:250px"></image> <br />
+        {{form.photo.label}}<br />
+        {{form.photo}}<br />
+        {% for error in form.photo.errors%}
+        <span style="color:red" :>[{{error}}]</span>
+        {% endfor %}
+    </p>
+    {% if session['account_type'] == 'User' %}
+    <p>
+        {{form.username.label}}<br />
+        {{form.username(size=32)}}<br />
+    </p>
+    {% else %}
+    <p>
+        {{form.name.label}}<br />
+        {{form.name.label(size=64)}}<br />
+    </p>
+    <p>
+        {{form.website.label}}<br />
+        {{form.website.label(size=64)}}<br />
+    </p>
+    {% endif %}
+    <p>
+        {{form.tags.label}}<br />
+        {{form.tags()}}<br />
+        {% for error in form.tags.errors %}
+        <span style="color:red;">[{{error}}]</span>
+        {% endfor %}
+        You Have Selected: <br />
+        {% for t in current_user.tags %}
+        {{t.name}} /
+        {% endfor %}
+    </p>
+    <p>{{form.submit()}}</p>
+</form>
+

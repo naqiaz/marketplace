@@ -1,0 +1,113 @@
+2020-07-16 16:59:43,188 ERROR: Exception on / [GET] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1283, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'user.type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 26, in index
+    return render_template('index.html',title='Home',promos=promos,
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\templating.py", line 136, in render_template
+    ctx.app.update_template_context(context)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 838, in update_template_context
+    context.update(func())
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\utils.py", line 379, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\login_manager.py", line 318, in _load_user
+    user = self._user_callback(user_id)
+  File "C:\Users\naqia\source\repos\marketplace\app\models.py", line 14, in load_user
+    return User.query.get(int(id))
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1021, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1138, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 287, in load_on_pk_identity
+    return q.one()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3436, in one
+    ret = self.one_or_none()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3405, in one_or_none
+    ret = list(self)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3481, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3506, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1020, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1133, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1323, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1517, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1283, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'user.type' in 'field list'")
+[SQL: SELECT user.username AS user_username, user.email AS user_email, user.zipcode AS user_zipcode, user.password_hash AS user_password_hash, user.image_file AS user_image_file, user.id AS user_id, user.type AS user_type 
+FROM user 
+WHERE user.id = %(param_1)s]
+[parameters: {'param_1': 3}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+2020-07-16 17:00:20,618 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-16 17:00:30,962 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-16 17:02:13,634 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-16 17:02:26,655 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-16 17:02:37,617 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:34:22,373 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:39:48,300 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 09:42:03,045 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]

@@ -1,0 +1,66 @@
+2020-07-17 10:17:31,644 ERROR: Exception on /password_reset/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNTk0OTk2MDQzLjcwMzk2MjgsInR5cGUiOiJVc2VyIn0.XXD0czsUamgxKNzwqxygNHiDgMTlNjeLKqqjrO0Otzo [GET] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 210, in password_reset
+    print (user.username, user.password)
+AttributeError: 'User' object has no attribute 'password'
+2020-07-17 10:18:44,949 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 10:23:06,178 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 11:51:30,192 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 11:51:36,807 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 11:51:41,021 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 11:51:55,787 ERROR: Exception on /profile/jay [GET] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 104, in profile
+    return render_template('profile.html', title='Profile', user=user, photos=photos)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\profile.html", line 3, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\base.html", line 34, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\profile.html", line 5, in block "content"
+    {% include '_profile.html' %}
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\naqia\source\repos\marketplace\app\templates\_profile.html", line 28, in template
+    {% if session['account_type'] == 'User'}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2020-07-17 11:53:04,902 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 11:54:32,131 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-17 12:09:54,925 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]

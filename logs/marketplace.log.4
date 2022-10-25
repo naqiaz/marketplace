@@ -1,0 +1,46 @@
+2020-07-08 17:35:31,245 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:47]
+2020-07-08 17:36:01,642 ERROR: Exception on /edit_profile [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 127, in edit_profile
+    return render_template('edit_profile.html',title='Edit Profile',promos=promos, form=form, image_file=image_file)
+UnboundLocalError: local variable 'image_file' referenced before assignment
+2020-07-08 17:38:08,552 ERROR: Exception on /edit_profile [POST] [in c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\naqia\source\repos\marketplace\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\naqia\source\repos\marketplace\app\routes.py", line 127, in edit_profile
+    return render_template('edit_profile.html',title='Edit Profile',promos=promos, form=form, image_file=image_file)
+UnboundLocalError: local variable 'image_file' referenced before assignment
+2020-07-08 17:50:38,274 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:47]
+2020-07-08 17:54:54,611 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:47]
+2020-07-08 19:28:14,448 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:47]
+2020-07-15 08:26:37,099 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-15 09:15:13,274 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-16 14:57:58,710 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]
+2020-07-16 16:59:34,446 INFO: Marketplace startup [in C:\Users\naqia\source\repos\marketplace\app\__init__.py:49]

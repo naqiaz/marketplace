@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block content %}
+<table style="width:100%">
+    <tr>
+        {% for p in promotions %}
+        <td> <img src="{{promos.url(p.image)}}" style="width:250px; height:250px" /></td>
+        {% endfor %}
+    </tr>
+</table>
+{% if prev_url %}
+<a href="{{prev_url}}"> Recent Promotions </a>
+{% endif %}
+{% if next_url %}
+<a href="{{next_url}}"> Past Promotions </a>
+{% endif %}
+{% endblock %}
